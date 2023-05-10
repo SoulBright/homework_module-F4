@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from .yasg import urlpatterns as svg_urls
 from book.views import *
 
 urlpatterns = [
@@ -24,3 +25,5 @@ urlpatterns = [
     path('api/pecipelist', RecipeAPIView.as_view()),
     path('api/categorylist', CategoryAPIView.as_view()),
 ]
+
+urlpatterns += svg_urls
